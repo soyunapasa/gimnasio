@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paz Fitness ✨</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Paz Training 🎀</h1>
+            
+<div class="payment-alert">
+                <span class="icon">📅</span>
+                <div class="text">
+                    <strong>Pagar Cuota: $32.000</strong>
+                    <small>Vencimiento: 6 de Febrero</small>
+                </div>
+            </div>
+
+
+            <div class="selectors">
+                <select id="week-select" onchange="updateView()">
+                    <option value="1">Semana 1 (Adaptación)</option>
+                    <option value="2">Semana 2 (Tiempo)</option>
+                    <option value="3">Semana 3 (Carga)</option>
+                    <option value="4">Semana 4 (Intensidad)</option>
+                </select>
+                <select id="day-select" onchange="updateView()">
+                    <option value="1">Día 1</option>
+                    <option value="2">Día 2</option>
+                    <option value="3">Día 3</option>
+                    <option value="4">Día 4</option>
+                    <option value="5">Día 5</option>
+                </select>
+            </div>
+        </header>
+
+        <main id="content">
+            <section class="warmup-section" id="warmup-container">
+               </section>
+
+            <hr class="divider">
+
+            <section id="exercise-list">
+                </section>
+        </main>
+
+        <footer class="timer-float">
+            <div class="timer-info">
+                <span>Movilidad Inicial</span>
+                <div id="time">05:00</div>
+            </div>
+            <div class="timer-controls">
+                <button class="timer-action" onclick="toggleTimer()" id="btn-play">▶</button>
+                <button class="timer-action" onclick="resetTimer()">🔄</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

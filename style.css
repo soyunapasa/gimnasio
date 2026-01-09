@@ -1,0 +1,156 @@
+:root {
+    --pink: #ffc2d1;
+    --dark-pink: #fb6f92;
+    --lilac: #e2cfea;
+    --cream: #fffcf2;
+    --mint: #d0f4de;
+    --text: #5f4b5b;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--pink);
+    margin: 0;
+    padding: 10px;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    background: var(--cream);
+    border-radius: 40px;
+    padding: 20px;
+    min-height: 90vh;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 { text-align: center; color: var(--dark-pink); margin-bottom: 15px; }
+
+/* ✨ ESTILO DEL RECORDATORIO DE PAGO ✨ */
+.payment-alert {
+    background-color: var(--alert-bg);
+    border: 2px solid var(--alert-border);
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    animation: popIn 0.5s ease;
+}
+
+.payment-alert .icon { font-size: 1.5rem; }
+
+.payment-alert .text {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-alert strong { color: var(--dark-pink); font-size: 0.95rem; }
+.payment-alert small { color: var(--text); opacity: 0.8; font-size: 0.8rem; }
+
+/* ------------------------------------- */
+
+.selectors { display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;}
+select {
+    flex: 1; min-width: 140px; padding: 10px; border-radius: 15px;
+    border: 2px solid var(--pink); font-family: inherit; font-weight: bold;
+    color: var(--dark-pink); background: white; outline: none;
+}
+
+.card {
+    background: white; border-radius: 20px; padding: 15px;
+    margin-bottom: 10px; box-shadow: 2px 2px 10px rgba(0,0,0,0.02);
+}
+.fixed-warmup { border-left: 6px solid var(--mint); }
+.dynamic-warmup { border-left: 6px solid var(--lilac); }
+h3 { margin: 0 0 5px 0; font-size: 0.95rem; color: var(--dark-pink); }
+p { margin: 5px 0; font-size: 0.9rem; }
+.divider { border: 0; height: 2px; background: var(--pink); margin: 15px 0; opacity: 0.5; }
+
+/* --- Tarjetas de Ejercicios y Desplegables --- */
+.ex-card {
+    background: white;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--lilac);
+    transition: all 0.3s ease;
+}
+
+.ex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.ex-name { font-weight: bold; font-size: 1.05rem; color: var(--text); }
+
+/* Botón para desplegar GIF */
+.toggle-gif-btn {
+    background: var(--lilac);
+    border: none;
+    color: var(--text);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.toggle-gif-btn:hover { background: var(--pink); color: white;}
+
+/* Contenedor del GIF (oculto por defecto) */
+.gif-container {
+    display: none; /* El truco está aquí */
+    margin-top: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--lilac);
+    border: 2px solid var(--lilac);
+}
+
+/* Clase que añade JS para mostrarlo */
+.gif-container.show { display: block; animation: fadeIn 0.3s ease-in;}
+
+.gif-container img { width: 100%; height: auto; display: block; }
+
+.ex-stats {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 12px;
+}
+.stat {
+    background: var(--lilac); padding: 8px; border-radius: 12px;
+    text-align: center; font-size: 0.7rem; font-weight: bold;
+}
+.stat input {
+    width: 100%; border: none; background: white; border-radius: 6px;
+    margin-top: 4px; text-align: center; color: var(--dark-pink); font-weight: bold;
+}
+
+/* Timer */
+.timer-float {
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    width: 90%; max-width: 380px; background: var(--dark-pink);
+    border-radius: 25px; padding: 12px 20px; display: flex;
+    justify-content: space-between; align-items: center; color: white; z-index: 100;
+    box-shadow: 0 5px 20px rgba(251, 111, 146, 0.4);
+}
+.timer-info { display: flex; flex-direction: column; }
+.timer-info span { font-size: 0.7rem; opacity: 0.8; }
+#time { font-size: 1.4rem; font-weight: bold; line-height: 1; }
+.timer-controls { display: flex; gap: 10px; }
+.timer-action {
+    background: white; border: none; width: 40px; height: 40px;
+    border-radius: 50%; color: var(--dark-pink); font-size: 1.2rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
